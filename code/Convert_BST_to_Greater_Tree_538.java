@@ -19,6 +19,11 @@
 public class Convert_BST_to_Greater_Tree_538 {
     private Convert_BST_to_Greater_Tree_538() {}
 
+    /**
+     * 思路：利用二叉搜索树的特性：当前结点、左孩子、右孩子三者中，右孩子的值最大，
+     * 　　　所以可以中序遍历二叉树（按右中左的顺序），在遍历时同时累加遍历过的结点的值，
+     * 　　　记为current，在更新某个结点值时，只需在原来值的基础上加上current.
+     */
     private TreeNode convertBST(TreeNode root) {
         inOrder(root, 0);
         return root;
