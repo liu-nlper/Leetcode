@@ -24,13 +24,11 @@ public class Max_Consecutive_Ones_485 {
     public int findMaxConsecutiveOnes(int[] nums) {
         int golbalMax = 0, currentMax = 0;
         for (int i=0; i<nums.length; ++i) {
-            if (nums[i] != 1) {
+            if (nums[i] == 0) {
+                currentMax = 0;
                 continue;
-            }
-            if (i==0 || nums[i]==nums[i-1]) {
-                currentMax += 1;
             } else {
-                currentMax = 1;
+                currentMax += 1;
             }
             if (currentMax > golbalMax) {
                 golbalMax = currentMax;
