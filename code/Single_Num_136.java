@@ -3,6 +3,8 @@ import java.util.Set;
 
 /**
    Created by ljx on 17-7-14.
+   
+   问题描述：
    Given an array of integers, every element appears twice except for one. Find that single one.
 
    Note:
