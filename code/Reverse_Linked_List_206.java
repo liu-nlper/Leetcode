@@ -27,17 +27,14 @@ public class Reverse_Linked_List_206 {
     }
 
     public ListNode reverseList(ListNode head) {
-        if (head == null)
-            return head;
-        ListNode temp = head, pointer = head.next, pointer_2 = head.next;
-        temp.next = null;
-        while (pointer != null) {
-            pointer = pointer.next;
-            pointer_2.next = temp;
-            temp = pointer_2;
-            pointer_2 = pointer;
+        ListNode newHead = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = next;
         }
-        return temp;
+        return newHead;
     }
 
     class ListNode {
